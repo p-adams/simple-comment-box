@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Comment Box</title>
+        <script src="/socket.io/socket.io.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">     
+    </head>
+    <body>
+        <div id="app" class="container">
+            <div class="jumbotron">
+                <h1>Article</h1>
+                <p>
+
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras interdum sit amet odio eget rutrum. Praesent efficitur metus a mollis aliquam. Cras consequat turpis ut facilisis tempus. Curabitur eu odio ut massa vehicula luctus. Maecenas imperdiet nulla at arcu convallis luctus. In odio nibh, egestas sed mi sit amet, tristique sodales eros. Nulla tincidunt tellus nisl, at rhoncus nisi faucibus consequat. 
+                </p>
+                <button type="button" @click="downvote" class="btn btn-default btn-sm">
+                <span class="glyphicon glyphicon-arrow-down"></span> Downvote
+                </button>
+                 Votes: {{likes}}
+                <button type="button"
+                        @click="upvote"
+                        class="btn btn-default btn-sm"
+                        :disabled="clicked"
+                >
+                <span class="glyphicon glyphicon-arrow-up"></span> Upvote
+                </button>
+            </div>
+            <ul>
+                <li v-for="message in messages">
+                {{message}}
+                </li>
+            </ul>
+            <input type="text" v-model="text" placeholder="Enter some text...">
+            <input type="button" @click="send" value="comment">
+        </div>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.0.0-beta.6/vue.js"></script>
+        <script type="text/javascript" src="app.js"></script>
+    </body>   
+</html>
