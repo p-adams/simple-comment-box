@@ -6,7 +6,7 @@ vm = new Vue({
         text: '',
         messages: [],
         likes: 0,
-        cliked: false
+        clicked: false
     },
     methods: {
         send(){
